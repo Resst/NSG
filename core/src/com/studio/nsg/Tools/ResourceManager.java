@@ -29,10 +29,10 @@ public class ResourceManager {
     }
     public Animation<TextureRegion> getAnimation(String entity_name, String animation_type, float frameDuration, Animation.PlayMode mode) {
         TextureAtlas atlas = assetManager.get(ATLAS_FOLDER + ATLAS_NAMES[0] + "/" + ATLAS_NAMES[0] + ".atlas",TextureAtlas.class);
-       return new Animation<>(frameDuration,atlas.findRegions(entity_name + "/" + animation_type+ "/" + animation_type), mode);
+       return new Animation<TextureRegion>(frameDuration,atlas.findRegions(entity_name + "/" + animation_type+ "/" + animation_type), mode);
     }
     public Texture getTexture(String entity_name){
-        TextureAtlas atlas = assetManager.get(ATLAS_FOLDER + ATLAS_NAMES[0]+".atlas",TextureAtlas.class);
+        TextureAtlas atlas = assetManager.get(ATLAS_FOLDER + ATLAS_NAMES[0]+ "/" + ATLAS_NAMES[0] +".atlas",TextureAtlas.class);
         return atlas.findRegion(entity_name).getTexture();
     }
     public TiledMap getMap(String map_name){
