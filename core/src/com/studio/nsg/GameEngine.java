@@ -2,10 +2,9 @@ package com.studio.nsg;
 
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.physics.box2d.*;
+import com.studio.nsg.components.TextureComponent;
 import com.studio.nsg.entities.Player;
 import com.studio.nsg.systems.AnimationSystem;
 import com.studio.nsg.systems.DrawingSystem;
@@ -26,13 +25,18 @@ public class GameEngine extends Engine {
     }
 
     private void initEntities(){
-        addEntity(new Player());
+        //TODO make it normal
+        Player player = new Player();
+        player.setScale(5, 5);
+        player.getComponent(TextureComponent.class).sprite.setOriginCenter();
+        player.initBody(world);
+        player.setPosition(10, 10);
+        addEntity(player);
         addSystem(new DrawingSystem(batch));
         addSystem(new AnimationSystem());
         addSystem(new PlayerControlSystem());
         world.setContactListener(new MyContactListener());
         debugRenderer = new Box2DDebugRenderer();
-        //TODO init systems
     }
 
     @Override
