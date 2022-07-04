@@ -18,7 +18,7 @@ public class NsgEntity extends Entity {
         add(ComponentFactory.ComponentType.TRANSFORM);
         add(ComponentFactory.ComponentType.TEXTURE);
         add(ComponentFactory.ComponentType.ENTITY_STAT);
-        add(ComponentFactory.ComponentType.ANIMATION);
+        //add(ComponentFactory.ComponentType.ANIMATION);
         add(ComponentFactory.ComponentType.BODY);
         add(ComponentFactory.ComponentType.COLLISION);
         transform = getComponent(TransformComponent.class);

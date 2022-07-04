@@ -31,7 +31,7 @@ public class AnimationSystem extends SortedIteratingSystem {
         animationComponent = entity.getComponent(AnimationComponent.class);
         animation = animationComponent.animation.get(animationComponent.state);
         entity.getComponent(TextureComponent.class).sprite.setRegion(animation.getKeyFrame(stateTime,!(animation.getPlayMode() == Animation.PlayMode.NORMAL)));
-        /* Проклятая версия
+        /*
          entity.getComponent(TextureComponent.class).sprite.setRegion(entity.getComponent(AnimationComponent.class).animation.get(entity.getComponent(AnimationComponent.class).state).getKeyFrame(stateTime,!(entity.getComponent(AnimationComponent.class).animation.get(entity.getComponent(AnimationComponent.class).state).getPlayMode() == Animation.PlayMode.NORMAL)));
          */
     }

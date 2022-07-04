@@ -25,7 +25,7 @@ public class GameClass extends Game {
 		rm = new ResourceManager();
 		engine = new GameEngine();
 		setScreen(new GameScreen(this));
-		/* Тестовый объекст с анимацией на экране
+		/*
 		TransformComponent transformComponent = new TransformComponent();
 		transformComponent.position = new Vector2(10f,10f);
 		transformComponent.scale = new Vector2(0.2f,0.2f);
