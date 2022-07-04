@@ -7,4 +7,5 @@ import com.badlogic.gdx.utils.IntMap;
 
 public class AnimationComponent implements Component {
     public IntMap<Animation<TextureRegion>> animation = new IntMap<>();
+    public int state;
 }

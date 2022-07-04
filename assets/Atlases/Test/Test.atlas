@@ -1,118 +1,125 @@
 
 Test.png
-size: 128, 256
+size: 256, 128
 format: RGBA8888
 filter: Nearest, Nearest
 repeat: none
 Big Demon/idle/idle
   rotate: false
-  xy: 2, 150
+  xy: 68, 76
   size: 32, 36
   orig: 32, 36
   offset: 0, 0
   index: 1
 Big Demon/idle/idle
   rotate: false
-  xy: 2, 112
+  xy: 136, 76
   size: 32, 36
   orig: 32, 36
   offset: 0, 0
   index: 3
 Big Demon/idle/idle
   rotate: false
-  xy: 36, 150
+  xy: 170, 76
   size: 32, 36
   orig: 32, 36
   offset: 0, 0
   index: 0
 Big Demon/idle/idle
   rotate: false
-  xy: 2, 74
+  xy: 36, 10
   size: 32, 36
   orig: 32, 36
   offset: 0, 0
   index: 2
 Big Demon/run/run
   rotate: false
-  xy: 2, 188
+  xy: 2, 10
   size: 32, 36
   orig: 32, 36
   offset: 0, 0
   index: 2
 Big Demon/run/run
   rotate: false
-  xy: 36, 188
+  xy: 102, 76
   size: 32, 36
   orig: 32, 36
   offset: 0, 0
   index: 1
 Big Demon/run/run
   rotate: false
-  xy: 70, 188
+  xy: 204, 76
   size: 32, 36
   orig: 32, 36
   offset: 0, 0
   index: 3
 Big Demon/run/run
   rotate: false
-  xy: 36, 112
+  xy: 70, 38
   size: 32, 36
   orig: 32, 36
   offset: 0, 0
   index: 0
 Big Zombie/idle/idle
   rotate: false
-  xy: 70, 152
+  xy: 104, 40
   size: 32, 34
   orig: 32, 34
   offset: 0, 0
   index: 1
 Big Zombie/idle/idle
   rotate: false
-  xy: 36, 76
+  xy: 172, 40
   size: 32, 34
   orig: 32, 34
   offset: 0, 0
   index: 3
 Big Zombie/idle/idle
   rotate: false
-  xy: 2, 2
+  xy: 70, 2
   size: 32, 34
   orig: 32, 34
   offset: 0, 0
   index: 0
 Big Zombie/idle/idle
   rotate: false
-  xy: 70, 80
+  xy: 138, 4
   size: 32, 34
   orig: 32, 34
   offset: 0, 0
   index: 2
 Big Zombie/run/run
   rotate: false
-  xy: 2, 38
+  xy: 138, 40
   size: 32, 34
   orig: 32, 34
   offset: 0, 0
   index: 1
 Big Zombie/run/run
   rotate: false
-  xy: 70, 116
+  xy: 206, 40
   size: 32, 34
   orig: 32, 34
   offset: 0, 0
   index: 3
 Big Zombie/run/run
   rotate: false
-  xy: 36, 40
+  xy: 104, 4
   size: 32, 34
   orig: 32, 34
   offset: 0, 0
   index: 0
 Big Zombie/run/run
   rotate: false
-  xy: 36, 4
+  xy: 172, 4
   size: 32, 34
   orig: 32, 34
   offset: 0, 0
   index: 2
+TestHui
+  rotate: false
+  xy: 2, 48
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
