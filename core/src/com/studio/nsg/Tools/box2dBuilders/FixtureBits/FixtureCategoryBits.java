@@ -1,4 +1,4 @@
-package com.studio.nsg.utils.FixtureBits;
+package com.studio.nsg.Tools.box2dBuilders.FixtureBits;
 
 public class FixtureCategoryBits {
     public static final int
