@@ -5,6 +5,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.studio.nsg.components.BodyComponent;
 import com.studio.nsg.components.TextureComponent;
 import com.studio.nsg.components.TransformComponent;
 import com.studio.nsg.utils.ComponentFactory;
@@ -31,9 +33,11 @@ public class NsgEntity extends Entity {
 
     public void updateTransform(){
         Sprite sprite = texture.sprite;
+        ;
         sprite.setOriginBasedPosition(transform.position.x, transform.position.y);
         sprite.setRotation(transform.rotation);
         sprite.setScale(transform.scale.x, transform.scale.y);
+        //getComponent(BodyComponent.class).body.setTransform(transform.position.x,transform.position.y, transform.rotation);
     }
 
     public Entity setPosition(Vector2 position){

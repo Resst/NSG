@@ -5,14 +5,23 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.physics.box2d.Shape;
 import com.badlogic.gdx.utils.IntMap;
 import com.studio.nsg.Tools.ResourceManager;
 import com.studio.nsg.components.AnimationComponent;
+import com.studio.nsg.components.BodyComponent;
 import com.studio.nsg.components.TextureComponent;
 import com.studio.nsg.components.TransformComponent;
+import com.studio.nsg.entities.Player;
 import com.studio.nsg.ui.screens.GameScreen;
 import com.studio.nsg.utils.AnimationStateList;
+import com.studio.nsg.utils.FixtureBits.FixtureCategoryBits;
+
+import java.awt.*;
+import java.awt.geom.RectangularShape;
 
 
 public class GameClass extends Game {
@@ -25,21 +34,6 @@ public class GameClass extends Game {
 		rm = new ResourceManager();
 		engine = new GameEngine();
 		setScreen(new GameScreen(this));
-		/*
-		TransformComponent transformComponent = new TransformComponent();
-		transformComponent.position = new Vector2(10f,10f);
-		transformComponent.scale = new Vector2(0.2f,0.2f);
-		transformComponent.rotation = 0f;
-		AnimationComponent animationComponent = new AnimationComponent();
-		animationComponent.state = 0;
-		animationComponent.animation = new IntMap<Animation<TextureRegion>>();
-		animationComponent.animation.put(AnimationStateList.IDLE,rm.getAnimation("Big Demon","idle",0.5f, Animation.PlayMode.LOOP));
-		TextureComponent textureComponent = new TextureComponent();
-		textureComponent.sprite = new Sprite(rm.getTextureRegion("TestHui"));
-		Entity entity = new Entity();
-		entity.add(transformComponent).add(textureComponent).add(animationComponent);
-		engine.addEntity(entity);
-		*/
 	}
 
 	@Override
