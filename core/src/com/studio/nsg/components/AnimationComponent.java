@@ -6,6 +6,6 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.IntMap;
 
 public class AnimationComponent implements Component {
+    public IntMap<Animation<TextureRegion>> animation = new IntMap<>();
     public int state;
-    public IntMap<Animation<TextureRegion>> animation;
 }

@@ -5,6 +5,7 @@ import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.SortedIteratingSystem;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -16,14 +17,14 @@ import com.studio.nsg.utils.PriorityComparator;
 
 public class DrawingSystem extends SortedIteratingSystem {
 
-    static final float PPM = 16;
+    public static final float PPM = 16;
 
     static final float METERS_WIDTH = Gdx.graphics.getWidth() / PPM;
     static final float METERS_HEIGHT = Gdx.graphics.getHeight() / PPM;
 
     public static final float SCALE = 1 / PPM;
 
-    public static float PixelsToMeters(float pixels){
+    public static float PixelsToMeters(float pixels) {
         return pixels * SCALE;
     }
 
@@ -38,7 +39,7 @@ public class DrawingSystem extends SortedIteratingSystem {
 
         mapRenderer = new OrthogonalTiledMapRenderer(null, SCALE);
         cam = new OrthographicCamera(METERS_WIDTH, METERS_HEIGHT);
-        cam.position.set(METERS_WIDTH / 2, METERS_HEIGHT / 2,0);
+        cam.position.set(METERS_WIDTH / 2, METERS_HEIGHT / 2, 0);
 
         drawingSprite = new Sprite();
     }
@@ -48,7 +49,7 @@ public class DrawingSystem extends SortedIteratingSystem {
         cam.update();
         batch.setProjectionMatrix(cam.combined);
 
-        if (mapRenderer.getMap() != null){
+        if (mapRenderer.getMap() != null) {
             mapRenderer.setView(cam);
             mapRenderer.render();
         }
@@ -60,27 +61,15 @@ public class DrawingSystem extends SortedIteratingSystem {
 
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
-
         Sprite sprite = entity.getComponent(TextureComponent.class).sprite;
-        TransformComponent transform = entity.getComponent(TransformComponent.class);
-
-        if (transform == null){
-            sprite.draw(batch);
-            return;
-        }
-
-        drawingSprite.set(sprite);
-        drawingSprite.setOriginBasedPosition(transform.position.x, transform.position.y);
-        drawingSprite.setScale(drawingSprite.getScaleX() * transform.scale.x, drawingSprite.getScaleY() * transform.scale.y);
-        drawingSprite.rotate((float)Math.toDegrees(transform.rotation));
-        drawingSprite.draw(batch);
+        sprite.draw(batch);
     }
 
-    public OrthographicCamera getCamera(){
+    public OrthographicCamera getCamera() {
         return cam;
     }
 
-    public void setMap(TiledMap map){
+    public void setMap(TiledMap map) {
         mapRenderer.setMap(map);
     }
 }
