@@ -13,7 +13,18 @@ public class ResourceManager {
     private static final String[] ATLAS_NAMES = {"Test"};
     private static final String[] MAP_NAMES = {"Test"};
     private final AssetManager assetManager;
-    public ResourceManager(){
+
+    private static ResourceManager instance;
+
+    public static ResourceManager getInstance() {
+        if(instance == null){
+            instance = new ResourceManager();
+        }
+        return instance;
+    }
+
+
+    private ResourceManager(){
         assetManager = new AssetManager();
         assetManager.setLoader(TiledMap.class, new TmxMapLoader());
         for (String atlas_name:

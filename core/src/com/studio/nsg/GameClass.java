@@ -26,12 +26,9 @@ import java.awt.geom.RectangularShape;
 
 public class GameClass extends Game {
 	private GameEngine engine;
-
-	ResourceManager rm;
 	
 	@Override
 	public void create () {
-		rm = new ResourceManager();
 		engine = new GameEngine();
 		setScreen(new GameScreen(this));
 	}
