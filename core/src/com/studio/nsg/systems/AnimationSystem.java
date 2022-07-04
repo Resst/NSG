@@ -12,7 +12,6 @@ import com.studio.nsg.utils.SystemPriorities;
 
 public class AnimationSystem extends SortedIteratingSystem {
 
-    static float stateTime = 0f;
     private AnimationComponent animationComponent;
     private Animation<TextureRegion> animation;
 
@@ -23,20 +22,19 @@ public class AnimationSystem extends SortedIteratingSystem {
     @Override
     public void update(float deltaTime) {
         super.update(deltaTime);
-        stateTime += deltaTime;
     }
 
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
         animationComponent = entity.getComponent(AnimationComponent.class);
         animation = animationComponent.animation.get(animationComponent.state);
-        entity.getComponent(TextureComponent.class).sprite.setRegion(animation.getKeyFrame(stateTime,!(animation.getPlayMode() == Animation.PlayMode.NORMAL)));
+        animationComponent.time+=deltaTime;
+        entity.getComponent(TextureComponent.class).sprite.setRegion(animation.getKeyFrame(animationComponent.time,!(animation.getPlayMode() == Animation.PlayMode.NORMAL)));
+        if(animationComponent.time >= animation.getAnimationDuration()){
+            animationComponent.time -= animation.getAnimationDuration();
+        }
         /*
          entity.getComponent(TextureComponent.class).sprite.setRegion(entity.getComponent(AnimationComponent.class).animation.get(entity.getComponent(AnimationComponent.class).state).getKeyFrame(stateTime,!(entity.getComponent(AnimationComponent.class).animation.get(entity.getComponent(AnimationComponent.class).state).getPlayMode() == Animation.PlayMode.NORMAL)));
          */
-    }
-
-    public void ResetStateTime() {
-        stateTime = 0;
     }
 }
